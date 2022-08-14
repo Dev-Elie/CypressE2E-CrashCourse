@@ -14,7 +14,10 @@ describe('E2E Test Site', ()=>{
         cy.contains("Sign in to codedamn").should("exist")
         cy.contains("Email address / Username").should("exist")
         cy.contains("Password").should("exist")
-        cy.contains("Don't have an account? Create one").should("exist")
+
+        cy.contains("Create one").click()
+        cy.url().should("include","/register")
+        cy.go("back")
 
     })
 })
